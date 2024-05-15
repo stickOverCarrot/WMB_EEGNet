@@ -16,14 +16,6 @@ logging.basicConfig(level=logging.INFO)
 
 
 def main(data_dir, output_dir):
-    # Input and output directories
-    # data_dir = "/home/wong/dataset_ubuntu/BCICIV_2a_gdf"
-    # output_dir = '/home/wong/dataset_ubuntu/BCICIV_2a_gdf/no_preprocess_no_filter_4500'
-
-    # Check ouput dir exists and possibly create it
-    parent_output_dir = os.path.abspath(os.path.join(output_dir, os.pardir))
-    assert os.path.exists(parent_output_dir), \
-        "Parent directory of given output directory does not exist"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -146,5 +138,5 @@ if __name__ == '__main__':
     parser.add_argument('-output_path', type=str,
                         help='Pkl path to save')
     args_ = parser.parse_args()
-    main(args_.data_dir, args_.output_dir)
+    main(args_.data_path, args_.output_path)
 
